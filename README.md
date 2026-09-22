@@ -1,6 +1,8 @@
 # Lab sécurité : détection d'intrusion avec Suricata
 
 > **Statut : à réaliser.** Ce guide est préparé à partir de la documentation officielle et de mes cours ; **je ne l'ai pas encore rejoué de bout en bout**. Les commandes sont à valider en le faisant, et le journal en bas de page sera complété avec mes résultats réels (captures, erreurs rencontrées, corrections).
+>
+> **Commandes vérifiées :** ce guide a été rejoué dans un conteneur Debian 13 (22 septembre 2026 ; sur Debian 12 le paquet `suricata` demande les dépôts *backports*, précisé dans le guide) avec le vrai Suricata : `suricata -T` valide la configuration et les deux règles, et refuse une règle avec un `sid` en double. En rejouant une vraie capture réseau, la règle ICMP a déclenché exactement 2 alertes pour 2 pings, la règle sur l'en-tête `User-Agent` a déclenché 1 alerte pour une requête HTTP imitant Nmap, et aucune alerte ne s'est déclenchée pour du trafic hors de `HOME_NET`. Vérifié ne veut pas dire réalisé : c'est l'assistant IA qui a préparé ce guide qui a rejoué ces commandes dans un conteneur jetable, pas moi sur mon propre lab. Le journal ci-dessous reste à remplir une fois que je l'aurai fait moi-même.
 
 ## Objectif
 
